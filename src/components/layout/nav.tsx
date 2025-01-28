@@ -75,7 +75,7 @@ const Nav = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-40 flex items-center justify-center bg-gray-900 bg-opacity-70 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-40 flex items-center justify-center bg-gray-900 bg-opacity-80 backdrop-blur-sm md:hidden"
             >
               <div className="flex flex-col items-center justify-center gap-8">
                 {navlinks.map((link, index) => (

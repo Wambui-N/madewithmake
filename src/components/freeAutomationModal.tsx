@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
 import type React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "./ui/input";
 
@@ -18,15 +18,33 @@ const FreeAutomationModal: React.FC<FreeAutomationModalProps> = ({
 }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log("Submitted:", { name, email });
-    // Close the modal and reset form
-    onClose();
-    setName("");
-    setEmail("");
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send email");
+      }
+
+      setIsSuccess(true);
+      setTimeout(() => {
+        onClose();
+        setName("");
+        setEmail("");
+        setIsSuccess(false);
+      }, 3000);
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
   };
 
   return (
@@ -50,53 +68,79 @@ const FreeAutomationModal: React.FC<FreeAutomationModalProps> = ({
             >
               <X className="h-6 w-6" />
             </button>
-            <h3 className="text-sky mb-4 text-2xl font-bold">
-              Get Your Free Automation
-            </h3>
-            <p className="mb-6 text-gray-300">
-              Enter your details below to receive the free email attachment
-              automation.
-            </p>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <label
-                  htmlFor="name"
-                  className="mb-2 block text-sm font-medium text-gray-300"
+
+            <AnimatePresence mode="wait">
+              {isSuccess ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  className="flex flex-col items-center justify-center py-8"
                 >
-                  Name
-                </label>
-                <Input
-                  type="text"
-                  id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  className="w-full bg-gray-700 text-white"
-                />
-              </div>
-              <div className="mb-6">
-                <label
-                  htmlFor="email"
-                  className="mb-2 block text-sm font-medium text-gray-300"
+                  <div className="mb-4 rounded-full bg-green-500/20 p-3">
+                    <Check className="h-8 w-8 text-green-500" />
+                  </div>
+                  <h3 className="mb-2 text-xl font-bold text-white">Thank You!</h3>
+                  <p className="text-center text-gray-300">
+                    Please check your email for the automation details.
+                  </p>
+                </motion.div>
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
                 >
-                  Email
-                </label>
-                <Input
-                  type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full bg-gray-700 text-white"
-                />
-              </div>
-              <Button
-                type="submit"
-                className="from-sky w-full rounded-lg bg-gradient-to-r to-[#7DCFE6] px-6 py-2 font-semibold text-gray-900 shadow-lg transition-all duration-300 hover:shadow-xl"
-              >
-                Get Automation
-              </Button>
-            </form>
+                  <h3 className="mb-4 text-2xl font-bold text-sky">
+                    Get Your Free Automation
+                  </h3>
+                  <p className="mb-6 text-gray-300">
+                    Enter your details below to receive the free email attachment
+                    automation.
+                  </p>
+                  <form onSubmit={handleSubmit}>
+                    <div className="mb-4">
+                      <label
+                        htmlFor="name"
+                        className="mb-2 block text-sm font-medium text-gray-300"
+                      >
+                        Name
+                      </label>
+                      <Input
+                        type="text"
+                        id="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                        className="w-full bg-gray-700 text-white"
+                      />
+                    </div>
+                    <div className="mb-6">
+                      <label
+                        htmlFor="email"
+                        className="mb-2 block text-sm font-medium text-gray-300"
+                      >
+                        Email
+                      </label>
+                      <Input
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        className="w-full bg-gray-700 text-white"
+                      />
+                    </div>
+                    <Button
+                      type="submit"
+                      className="w-full rounded-lg bg-gradient-to-r from-sky to-[#7DCFE6] px-6 py-2 font-semibold text-gray-900 shadow-lg transition-all duration-300 hover:shadow-xl"
+                    >
+                      Get Automation
+                    </Button>
+                  </form>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         </motion.div>
       )}
