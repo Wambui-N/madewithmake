@@ -18,9 +18,9 @@ const Footer = () => {
 
   return (
     <footer className="responsive mt-8 text-white">
-      <div className="container mx-auto px-4 py-12">
+      <div className="mx-auto px-4 py-12">
         {/* Newsletter Section */}
-        <div className="mb-12 rounded-lg bg-gray-900/50 flex flex-col items-center p-8">
+        <div className="mb-12 flex flex-col items-center rounded-lg bg-gray-900/50 p-8">
           <div className="pb-12">
             <Link href="#">
               <Image src="/H Logo.svg" alt="Logo" width={200} height={200} />
@@ -67,7 +67,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#services"
-                  className="text-grey hover:text-white text-sm"
+                  className="text-sm text-grey hover:text-white"
                 >
                   Services
                 </a>
@@ -75,20 +75,20 @@ const Footer = () => {
               <li>
                 <a
                   href="#how-we-work"
-                  className="text-grey hover:text-white text-sm"
+                  className="text-sm text-grey hover:text-white"
                 >
                   How we work
                 </a>
               </li>
               <li>
-                <a href="#faqs" className="text-grey hover:text-white text-sm">
+                <a href="#faqs" className="text-sm text-grey hover:text-white">
                   FAQs
                 </a>
               </li>
               <li>
                 <a
                   href="#contact"
-                  className="text-grey hover:text-white text-sm"
+                  className="text-sm text-grey hover:text-white"
                 >
                   Contact Us
                 </a>
@@ -100,12 +100,12 @@ const Footer = () => {
             <h4 className="mb-4 font-bold">Social Media</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-grey hover:text-white text-sm">
+                <a href="#" className="text-sm text-grey hover:text-white">
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a href="#" className="text-grey hover:text-white text-sm">
+                <a href="#" className="text-sm text-grey hover:text-white">
                   X
                 </a>
               </li>
@@ -118,7 +118,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/privacypolicy"
-                  className="text-grey hover:text-white text-sm"
+                  className="text-sm text-grey hover:text-white"
                 >
                   Privacy Policy
                 </Link>
@@ -126,7 +126,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/termsandconditions"
-                  className="text-grey hover:text-white text-sm"
+                  className="text-sm text-grey hover:text-white"
                 >
                   Terms and Conditions
                 </Link>
@@ -135,7 +135,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-4 pt-8 text-center text-gre text-sm text-grey">
+        <div className="text-gre mt-4 pt-8 text-center text-sm text-grey">
           <p>© Copyright 2025. All rights reserved by Made With Make</p>
         </div>
       </div>

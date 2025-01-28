@@ -7,14 +7,14 @@ import CTAButton from "../cta_button";
 
 const Hero = () => {
   return (
-    <section className="container relative mx-auto flex min-h-[80vh] flex-col justify-center overflow-hidden text-center">
+    <section className="relative flex min-h-[80vh] flex-col justify-center overflow-hidden text-center">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="z-10"
+        className="flex h-full flex-col items-center justify-center space-y-8"
       >
-        <h1 className="from-sky mb-6 bg-gradient-to-r to-[#7DCFE6] bg-clip-text text-4xl font-bold text-transparent md:text-5xl lg:text-6xl">
+        <h1 className="mb-6 overflow-hidden bg-gradient-to-r from-sky to-[#7DCFE6] bg-clip-text text-4xl font-bold text-transparent md:text-5xl lg:text-6xl">
           Unlock Hands-Free Growth with
           <br />
           AI-Powered Workflows
@@ -29,7 +29,7 @@ const Hero = () => {
       </motion.div>
 
       {/* Abstract tech background */}
-      <div className="absolute inset-0 z-10">
+      <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-90"></div>
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOHYxMmgxMlYxOEgzNnpNMTggMzZ2MTJIMTJWMZSI+PC9wYXRoPjwvZz48L3N2Zz4=')] bg-[length:30px] opacity-50"></div>
       </div>
@@ -56,11 +56,11 @@ const Particles = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden absolute inset-0">
+    <div className="absolute inset-0 overflow-hidden">
       {particles.map((particle, i) => (
         <motion.div
           key={i}
-          className="bg-sky absolute h-1 w-1 rounded-full"
+          className="absolute h-1 w-1 rounded-full bg-sky"
           initial={{
             x: particle.x,
             y: particle.y,

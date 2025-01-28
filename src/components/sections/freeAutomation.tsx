@@ -43,7 +43,7 @@ const FreeAutomation = () => {
 
   return (
     <section className="py-20">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ const FreeAutomation = () => {
           className="mx-auto max-w-4xl"
         >
           <div className="mb-12 text-center">
-            <h2 className="from-sky mb-6 mt-4 bg-gradient-to-r to-[#7DCFE6] bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
+            <h2 className="mb-6 mt-4 overflow-hidden bg-gradient-to-r from-sky to-[#7DCFE6] bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
               Have a Taste of What We Offer!
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-grey">
@@ -74,7 +74,7 @@ const FreeAutomation = () => {
           <div className="text-center">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-sky group relative overflow-hidden rounded-lg px-6 py-2 font-semibold text-gray-900 shadow-lg transition-all duration-300 hover:shadow-xl"
+              className="group relative overflow-hidden rounded-lg bg-sky px-6 py-2 font-semibold text-gray-900 shadow-lg transition-all duration-300 hover:shadow-xl"
             >
               <span className="flex items-center">
                 Get Your Free Automation

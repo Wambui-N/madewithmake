@@ -2,7 +2,7 @@ import React from "react";
 
 export default function PrivacyPolicy() {
   return (
-    <div className="container mx-auto p-6">
+    <div className="mx-auto p-6">
       <h1 className="text-2xl font-bold">Privacy Policy</h1>
       <p className="text-grey">Last updated: January 25th, 2025</p>
 
@@ -19,18 +19,18 @@ export default function PrivacyPolicy() {
         accordance with this Privacy Policy.
       </p>
 
-      <h2 className="text-xl font-semibold mt-6">
+      <h2 className="mt-6 text-xl font-semibold">
         Interpretation and Definitions
       </h2>
-      <h3 className="text-lg font-semibold mt-4">Interpretation</h3>
+      <h3 className="mt-4 text-lg font-semibold">Interpretation</h3>
       <p className="mt-2">
         Words with initial capital letters have meanings defined under the
         following conditions. The following definitions shall have the same
         meaning regardless of whether they appear in singular or plural.
       </p>
 
-      <h3 className="text-lg font-semibold mt-4">Definitions</h3>
-      <ul className="list-disc list-inside mt-2">
+      <h3 className="mt-4 text-lg font-semibold">Definitions</h3>
+      <ul className="mt-2 list-inside list-disc">
         <li>
           <strong>Account:</strong> A unique account created for you to access
           our Service.
@@ -60,10 +60,10 @@ export default function PrivacyPolicy() {
         </li>
       </ul>
 
-      <h2 className="text-xl font-semibold mt-6">
+      <h2 className="mt-6 text-xl font-semibold">
         Collecting and Using Your Personal Data
       </h2>
-      <h3 className="text-lg font-semibold mt-4">Types of Data Collected</h3>
+      <h3 className="mt-4 text-lg font-semibold">Types of Data Collected</h3>
       <p className="mt-2">
         <strong>Personal Data:</strong> We may collect personally identifiable
         information including email address, name, phone number, company
@@ -74,7 +74,7 @@ export default function PrivacyPolicy() {
         pages visited, and time spent on our Service.
       </p>
 
-      <h3 className="text-lg font-semibold mt-4">
+      <h3 className="mt-4 text-lg font-semibold">
         Tracking Technologies and Cookies
       </h3>
       <p className="mt-2">
@@ -82,15 +82,15 @@ export default function PrivacyPolicy() {
         experience. You can disable cookies in your browser settings.
       </p>
 
-      <h2 className="text-xl font-semibold mt-6">Use of Your Personal Data</h2>
-      <ul className="list-disc list-inside mt-2">
+      <h2 className="mt-6 text-xl font-semibold">Use of Your Personal Data</h2>
+      <ul className="mt-2 list-inside list-disc">
         <li>Providing and maintaining our Service.</li>
         <li>Managing your Account.</li>
         <li>Communicating with you regarding updates or offers.</li>
         <li>Business transfers or corporate restructuring.</li>
       </ul>
 
-      <h2 className="text-xl font-semibold mt-6">
+      <h2 className="mt-6 text-xl font-semibold">
         Retention and Security of Your Data
       </h2>
       <p className="mt-2">
@@ -98,7 +98,7 @@ export default function PrivacyPolicy() {
         secure measures, no online data transmission is 100% secure.
       </p>
 
-      <h2 className="text-xl font-semibold mt-6">
+      <h2 className="mt-6 text-xl font-semibold">
         Changes to this Privacy Policy
       </h2>
       <p className="mt-2">
@@ -106,7 +106,7 @@ export default function PrivacyPolicy() {
         review it regularly.
       </p>
 
-      <h2 className="text-xl font-semibold mt-6">Contact Us</h2>
+      <h2 className="mt-6 text-xl font-semibold">Contact Us</h2>
       <p className="mt-2">
         If you have any questions, contact us at{" "}
         <a href="mailto:privacy@madewithmake.com" className="text-blue-600">

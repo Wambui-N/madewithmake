@@ -37,7 +37,7 @@ const Process = () => {
     <section id="how-we-work" className="py-8 responsive">
       <Badge text="Process" />
       <SectionTitle text="Our Process is Simple, Clear, and Results-Driven" />
-      <div className="relative w-full flex flex-col items-center">
+      <div className="relative w-full flex flex-col items-center overflow-hidden">
         <div className="absolute transform -translate-x-1/2" />
         {processSteps.map((step, index) => (
             <ProcessStep key={index} step={step} index={index} />

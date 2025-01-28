@@ -1,28 +1,34 @@
-"use client"
+"use client";
 
-import React, { useState } from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
-import { motion, AnimatePresence } from "motion/react"
-import CTAButton from "../cta_button"
-import Navlink from "../navlink"
+import React, { useState } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
+import CTAButton from "../cta_button";
+import Navlink from "../navlink";
 
 const navlinks = [
   { name: "Services", href: "#services" },
   { name: "How We Work", href: "#how-we-work" },
   { name: "FAQs", href: "#faqs" },
   { name: "Contact Us", href: "#contact" },
-]
+];
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="responsive relative z-20 py-2">
-      <div className="container mx-auto flex items-center justify-between py-6">
+    <nav className="responsive relative z-50 py-2">
+      <div className="mx-auto flex items-center justify-between py-6">
         {/* Logo */}
-        <Image src="/H Logo.svg" alt="logo" width={200} height={200} className="relative z-50" />
+        <Image
+          src="/H Logo.svg"
+          alt="logo"
+          width={200}
+          height={200}
+          className="relative z-50"
+        />
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 md:flex">
@@ -52,7 +58,11 @@ const Nav = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              {isOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
+              {isOpen ? (
+                <X className="h-6 w-6 text-white" />
+              ) : (
+                <Menu className="h-6 w-6 text-white" />
+              )}
             </motion.div>
           </AnimatePresence>
         </Button>
@@ -75,7 +85,11 @@ const Nav = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <Navlink href={link.href} text={link.name} onClick={() => setIsOpen(false)} />
+                    <Navlink
+                      href={link.href}
+                      text={link.name}
+                      onClick={() => setIsOpen(false)}
+                    />
                   </motion.div>
                 ))}
                 <motion.div
@@ -91,8 +105,7 @@ const Nav = () => {
         </AnimatePresence>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
-
+export default Nav;

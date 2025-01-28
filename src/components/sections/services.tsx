@@ -72,7 +72,7 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section id="services" className="container mx-auto px-4 py-8">
+    <section id="services" className="mx-auto px-4 py-8">
       <div className="mb-12 text-center md:text-left">
         <Badge text="services" />
         <SectionTitle text="What our clients get" />
