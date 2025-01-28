@@ -10,7 +10,7 @@ export async function POST(req: Request) {
     const { name, email } = await req.json();
 
     const { data, error } = await resend.emails.send({
-      from: "Made With Make <madewithmake.com>",
+      from: "Made With Make <wambui@madewithmake.com>",
       to: [email], // Send to the user's email
       subject: "Your Automation Template is Here! 🚀",
       react: Email({ name }) as React.ReactElement,
