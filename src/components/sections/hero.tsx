@@ -20,8 +20,7 @@ const Hero = () => {
           AI-Powered Workflows
         </h1>
         <p className="mx-auto mb-8 max-w-2xl text-lg text-grey md:text-xl">
-          Save time, boost your leads, and streamline your business with custom
-          automation solutions—ready to go in less than a week.
+        We help you save time, get more leads, and make your business run smoothly with custom automation solutions. Everything will be ready in less than a week, and if you’re not happy, you get your money back—guaranteed.
         </p>
         <div className="flex items-center justify-center space-x-4">
           <CTAButton />
