@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import CTAButton from "../cta_button";
@@ -20,11 +20,11 @@ const Hero = () => {
           AI-Powered Workflows
         </h1>
         <p className="mx-auto mb-8 max-w-2xl text-lg text-grey md:text-xl">
-        Save time, boost your leads, and streamline your business with custom automation solutions—ready to go in less than a week.
+          Save time, boost your leads, and streamline your business with custom
+          automation solutions—ready to go in less than a week.
         </p>
         <div className="flex items-center justify-center space-x-4">
           <CTAButton />
-        
         </div>
       </motion.div>
 
@@ -41,16 +41,30 @@ const Hero = () => {
 };
 
 const Particles = () => {
+  const [particles, setParticles] = useState<
+    { x: number; y: number; opacity: number }[]
+  >([]);
+
+  useEffect(() => {
+    // Create initial particles only in the browser
+    const newParticles = [...Array(20)].map((_, i) => ({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      opacity: Math.random(),
+    }));
+    setParticles(newParticles);
+  }, []);
+
   return (
     <div className="overflow-hidden absolute inset-0">
-      {[...Array(20)].map((_, i) => (
+      {particles.map((particle, i) => (
         <motion.div
           key={i}
           className="bg-sky absolute h-1 w-1 rounded-full"
           initial={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            opacity: Math.random(),
+            x: particle.x,
+            y: particle.y,
+            opacity: particle.opacity,
           }}
           animate={{
             x: Math.random() * window.innerWidth,
