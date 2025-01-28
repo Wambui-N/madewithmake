@@ -181,7 +181,7 @@ export function Email(props: { name?: string }) {
             }}
           >
             <Button
-              href="https://drive.google.com/uc?id=1nSMS4RYfoQz9p9P_nZvevJ0AGY2zt9FT"
+              href="https://www.dropbox.com/scl/fi/q55lvs0ogjbowpoq6yd02/Email-Attachment-to-Google-Drive-Automation-documentation.pdf?rlkey=xs8itrqbdidnc3u87kz8zamzg&st=pjkt2slx&dl=0"
               style={{
                 backgroundColor: colors.dark_blue,
                 color: colors.white,
