@@ -20,12 +20,8 @@ const Footer = () => {
     <footer className="responsive mt-8 text-white">
       <div className="mx-auto px-4 py-12">
         {/* Newsletter Section */}
-        <div className="mb-12 flex flex-col items-center rounded-lg bg-gray-900/50 p-8">
-          <div className="pb-12">
-            <Link href="#">
-              <Image src="/H Logo.svg" alt="Logo" width={200} height={200} />
-            </Link>
-          </div>
+        {/* <div className="mb-12 flex flex-col items-center rounded-lg bg-gray-900/50 p-8">
+          
           <div className="mx-auto max-w-2xl text-center">
             <h3 className="mb-4 text-2xl font-bold">
               Subscribe to Our Newsletter
@@ -57,10 +53,15 @@ const Footer = () => {
               <p className="mt-4 text-green-400">{subscriptionStatus}</p>
             )}
           </div>
-        </div>
+        </div> */}
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+        <div className="pb-12">
+            <Link href="#">
+              <Image src="/H Logo.svg" alt="Logo" width={200} height={200} />
+            </Link>
+          </div>
           <div>
             <h4 className="mb-4 font-bold">General</h4>
             <ul className="space-y-2">

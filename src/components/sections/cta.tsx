@@ -3,7 +3,7 @@ import CTAButton from "../cta_button";
 
 const cta = () => {
   return (
-    <section className="mx-auto py-8 text-center">
+    <section id="contact" className="mx-auto py-8 text-center">
       <h2 className="mb-6 mt-4 overflow-hidden bg-gradient-to-r from-sky to-[#7DCFE6] bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
         Start Today with a Free 30-Min
         <br />

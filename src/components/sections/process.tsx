@@ -35,7 +35,7 @@ const processSteps = [
 const Process = () => {
   return (
     <section id="how-we-work" className="py-8 responsive">
-      <Badge text="Process" />
+      <Badge text="How We Work" />
       <SectionTitle text="Our Process is Simple, Clear, and Results-Driven" />
       <div className="relative w-full flex flex-col items-center overflow-hidden">
         <div className="absolute transform -translate-x-1/2" />

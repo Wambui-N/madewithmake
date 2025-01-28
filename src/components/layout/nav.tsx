@@ -11,7 +11,6 @@ import Navlink from "../navlink";
 const navlinks = [
   { name: "Services", href: "#services" },
   { name: "How We Work", href: "#how-we-work" },
-  { name: "FAQs", href: "#faqs" },
   { name: "Contact Us", href: "#contact" },
 ];
 
