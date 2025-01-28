@@ -19,7 +19,7 @@ const Nav = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="relative z-20 py-2">
+    <nav className="responsive relative z-20 py-2">
       <div className="container mx-auto flex items-center justify-between py-6">
         {/* Logo */}
         <Image src="/H Logo.svg" alt="logo" width={200} height={200} className="relative z-50" />

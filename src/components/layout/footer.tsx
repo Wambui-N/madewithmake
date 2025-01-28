@@ -17,7 +17,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="mt-8 text-white">
+    <footer className="responsive mt-8 text-white">
       <div className="container mx-auto px-4 py-12">
         {/* Newsletter Section */}
         <div className="mb-12 rounded-lg bg-gray-900/50 flex flex-col items-center p-8">

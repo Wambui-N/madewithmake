@@ -127,12 +127,17 @@
     @apply dark border-border;
   }
   body {
-    @apply responsive bg-black text-foreground;
+    @apply noise bg-black text-foreground;
   }
 }
 
 @layer utilities {
   .responsive {
-    @apply mx-6 w-full max-w-5xl lg:mx-auto md:mx-6 ;
+    @apply mx-6 w-full max-w-5xl lg:mx-auto md:mx-6;
+  }
+  .noise {
+    @apply relative before:absolute before:top-0 before:left-0 before:w-full
+    before:h-full before:content-[''] before:opacity-[0.02] before:z-50 before:pointer-events-none
+    before:bg-[url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaG5iOXQ2NjhrZTJqZTloazVuZXllOTlobmR0ZzlwZmcwZmhpd2c4ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FSqYDfsdaiG9W/giphy.gif')];
   }
 }
