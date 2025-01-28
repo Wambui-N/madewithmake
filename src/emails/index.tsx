@@ -168,11 +168,10 @@ export function Email(props: { name?: string }) {
               marginBottom: "24px",
             }}
           >
-            Thanks for signing up! We're excited to share your free automation
-            template that helps you save time and stay organized by
-            automatically uploading email attachments to Google Drive. This
-            template is designed to make your workflow smoother and more
-            efficient.
+            Thanks for signing up! This automation template helps you save time
+            and stay organized by automatically uploading email attachments to
+            Google Drive. This template is designed to make your workflow
+            smoother and more efficient.
           </Text>
 
           <div
@@ -213,7 +212,9 @@ export function Email(props: { name?: string }) {
               border: `1px solid ${colors.dark_blue}`,
             }}
           >
-            If you’re unsure how to set up this scenario or want additional customizations, feel free to reach out for support at no extra fees. Let’s make automation work for you!
+            If you’re unsure how to set up this scenario or want additional
+            customizations, feel free to reach out for support at no extra fees.
+            Let’s make automation work for you!
           </Text>
 
           <div
