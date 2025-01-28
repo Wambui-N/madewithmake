@@ -181,7 +181,7 @@ export function Email(props: { name?: string }) {
             }}
           >
             <Button
-              href="https://drive.google.com/file/d/1nSMS4RYfoQz9p9P_nZvevJ0AGY2zt9FT/view?usp=drive_link"
+              href="https://drive.google.com/uc?id=1nSMS4RYfoQz9p9P_nZvevJ0AGY2zt9FT"
               style={{
                 backgroundColor: colors.dark_blue,
                 color: colors.white,
