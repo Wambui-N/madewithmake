@@ -124,10 +124,10 @@
 
 @layer base {
   * {
-    @apply dark border-border overflow-x-hidden;
+    @apply dark bg-black border-border overflow-x-hidden;
   }
   body {
-    @apply noise bg-black text-foreground ;
+    @apply noise text-foreground ;
   }
 }
 
