@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="satoshi-regular">
+      <body className="satoshi-regular bg-black">
         <Nav />
         <div className="">{children}</div>
         <Footer />
