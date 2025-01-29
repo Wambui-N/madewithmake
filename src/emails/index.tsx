@@ -80,7 +80,7 @@ export function Email(props: { name?: string }) {
               <tbody>
                 <tr>
                   <td align="center">
-                    <a href="https://madewithmake.com/api/download"
+                    <a href="/api/download"
                       style={{
                         backgroundColor: colors.dark_blue,
                         color: colors.white,
