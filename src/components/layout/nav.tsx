@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import CTAButton from "../cta_button";
 import Navlink from "../navlink";
+import Link from "next/link";
 
 const navlinks = [
   { name: "Services", href: "#services" },
@@ -22,6 +23,7 @@ const Nav = () => {
     <nav className="responsive relative z-50 py-2">
       <div className="mx-auto flex items-center justify-between py-6">
         {/* Logo */}
+        <Link href='/'>
         <Image
           src="/H Logo.svg"
           alt="logo"
@@ -29,6 +31,7 @@ const Nav = () => {
           height={200}
           className="relative z-50"
         />
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 md:flex">
