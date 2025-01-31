@@ -127,7 +127,7 @@
     @apply dark border-border overflow-x-hidden;
   }
   body {
-    @apply noise bg-black text-foreground ;
+    @apply noise bg-black min-h-screen text-foreground ;
   }
 }
 
