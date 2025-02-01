@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { motion } from "motion/react";
 import { getAllPosts, getAllTags } from "@/lib/posts";
 import { Calendar, Tag, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,7 +13,7 @@ export default async function TagPage({
   const resolvedParams = await params;
 
   const posts = await getAllPosts();
-  const tags = (await getAllTags()).find((t) => t.slug === resolvedParams.slug);
+  const tags = (await getAllTags());
 
   return (
     <div className="responsive">
@@ -68,7 +67,7 @@ export default async function TagPage({
                     {post.title}
                   </h2>
                 </Link>
-                <p className="mb-4 text-muted-foreground">{post.excerpt}</p>
+                <p className="mb-4 text-grey">{post.excerpt}</p>
                 <div className="mb-4 flex flex-wrap gap-1">
                   {post.tags.map((tag) => (
                     <Link

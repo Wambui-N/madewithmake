@@ -75,7 +75,7 @@ export default async function BlogPost({
         <MDXRemote source={post.content} components={mdxComponents} />
       </div>
 
-      <footer className="mt-12 border-t border-grey pt-6">
+      <footer className="mt-12 border-t border-grey/50 pt-6">
         <div className="flex flex-wrap gap-2">
           {post.tags?.map((tag: string) => (
             <div
