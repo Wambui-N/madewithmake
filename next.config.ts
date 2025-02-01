@@ -7,6 +7,10 @@ const withMDX = require('@next/mdx')({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  typescript: {
+    // If you need to temporarily ignore build errors
+    // ignoreBuildErrors: true,
+  },
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   images: {
     domains: ['images.unsplash.com'], // Add domains for remote images

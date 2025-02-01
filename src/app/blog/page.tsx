@@ -6,9 +6,15 @@ import { Button } from "@/components/ui/button";
 import BlogHero from "@/components/blogHero";
 import Image from "next/image";
 
-export default async function BlogList() {
+export default async function TagPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const resolvedParams = await params;
+
   const posts = await getAllPosts();
-  const tags = await getAllTags();
+  const tags = (await getAllTags()).find((t) => t.slug === resolvedParams.slug);
 
   return (
     <div className="responsive">
@@ -18,8 +24,8 @@ export default async function BlogList() {
       <div className="mb-12">
         <h2 className="mb-4 text-2xl font-semibold">Explore topics</h2>
         <div className="flex flex-wrap gap-2">
-          {tags.length > 0 ? (
-            tags.map((tag) => (
+          {tags && tags.length > 0 ? (
+            tags.map((tag: { slug: string; name: string }) => (
               <Link
                 key={tag.slug}
                 href={`/blog/tag/${tag.slug}`}
@@ -44,8 +50,14 @@ export default async function BlogList() {
               className="group relative flex flex-col overflow-hidden rounded-lg bg-gray-900/50 shadow transition-shadow hover:shadow-lg"
             >
               <div className="p-6">
-                <div className="mb-3  w-full ">
-                  <Image className="object-cover rounded-lg w-full h-[40vh]" src={post.coverImage} alt={post.title} width={500} height={100} />
+                <div className="mb-3 w-full">
+                  <Image
+                    className="h-[40vh] w-full rounded-lg object-cover"
+                    src={post.coverImage}
+                    alt={post.title}
+                    width={500}
+                    height={100}
+                  />
                 </div>
                 <div className="mb-3 flex items-center gap-2 text-sm text-muted-foreground">
                   <Calendar className="h-4 w-4" />

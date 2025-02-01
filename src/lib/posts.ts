@@ -11,29 +11,31 @@ export async function getAllPosts(): Promise<Post[]> {
   if (!fs.existsSync(postsDirectory)) return []; // Prevents errors if directory is missing
   const fileNames = fs.readdirSync(postsDirectory);
 
-  return (await Promise.all(
-    fileNames
-      .filter((fileName) => fileName.endsWith(".mdx")) // Ensure only .mdx files
-      .map(async (fileName) => {
-        // Changed to async
-        const fullPath = path.join(postsDirectory, fileName);
-        const fileContents = await fs.promises.readFile(fullPath, "utf8"); // Use promises to read file
-        const { data, content } = matter(fileContents);
+  return (
+    await Promise.all(
+      fileNames
+        .filter((fileName) => fileName.endsWith(".mdx")) // Ensure only .mdx files
+        .map(async (fileName) => {
+          // Changed to async
+          const fullPath = path.join(postsDirectory, fileName);
+          const fileContents = await fs.promises.readFile(fullPath, "utf8"); // Use promises to read file
+          const { data, content } = matter(fileContents);
 
-        return {
-          coverImage: data.coverImage ?? "", // Ensure coverImage is defined
-          slug: fileName.replace(/\.mdx$/, ""),
-          title: data.title ?? "Untitled", // Ensure title is defined
-          date: data.date ?? new Date().toISOString(), // Fallback date
-          excerpt: data.excerpt ?? content.slice(0, 150) + "...", // Auto-generate excerpt
-          content,
-          tags: (data.tags || []).map((tag: string) => ({
-            name: tag,
-            slug: tag.toLowerCase().replace(/\s+/g, "-"),
-          })),
-        };
-      })
-  )).sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1));
+          return {
+            coverImage: data.coverImage ?? "", // Ensure coverImage is defined
+            slug: fileName.replace(/\.mdx$/, ""),
+            title: data.title ?? "Untitled", // Ensure title is defined
+            date: data.date ?? new Date().toISOString(), // Fallback date
+            excerpt: data.excerpt ?? content.slice(0, 150) + "...", // Auto-generate excerpt
+            content,
+            tags: (data.tags || []).map((tag: string) => ({
+              name: tag,
+              slug: tag.toLowerCase().replace(/\s+/g, "-"),
+            })),
+          };
+        }),
+    )
+  ).sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1));
 }
 
 export async function getAllTags(): Promise<PostTag[]> {
@@ -42,14 +44,15 @@ export async function getAllTags(): Promise<PostTag[]> {
 
   posts.forEach((post) => {
     post.tags.forEach((tag) => {
-      tags.add(tag.name);
+      tags.add(tag.name); // Ensure we are adding the correct property
     });
   });
 
   return Array.from(tags).map((tag) => ({
     name: tag,
     slug: tag.toLowerCase().replace(/\s+/g, "-"),
-  }));
+    // Ensure any additional properties required by PostTag are included
+  })) as PostTag[]; // Cast to PostTag[]
 }
 
 export async function getPostsByTag(tagSlug: string): Promise<Post[]> {

@@ -8,13 +8,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function TagPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const posts = await getPostsByTag(params.slug);
-  const tag = (await getAllTags()).find((t) => t.slug === params.slug);
+export default async function TagPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  
+  const posts = await getPostsByTag(resolvedParams.slug);
+  const tag = (await getAllTags()).find((t) => t.slug === resolvedParams.slug);
 
   return (
     <div className="mx-auto max-w-4xl py-12">
