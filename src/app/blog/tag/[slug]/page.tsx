@@ -20,7 +20,7 @@ export default async function TagPage({ params }: { params: Promise<{ slug: stri
 
   return (
     <div className="mx-auto max-w-4xl py-12">
-      <h1 className="mb-8 text-4xl font-bold">Posts tagged "{tag?.name}"</h1>
+      <h1 className="mb-4 text-2xl font-semibold overflow-hidden py-2">Posts tagged "{tag?.name}"</h1>
       <div className="space-y-8">
         {posts.map((post) => (
           <article
