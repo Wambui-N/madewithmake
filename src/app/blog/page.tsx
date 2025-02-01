@@ -44,8 +44,8 @@ export default async function BlogList() {
               className="group relative flex flex-col overflow-hidden rounded-lg bg-gray-900/50 shadow transition-shadow hover:shadow-lg"
             >
               <div className="p-6">
-                <div className="mb-3 object-cover">
-                  <Image src={post.coverImage} alt={post.title} fill />
+                <div className="mb-3  w-full ">
+                  <Image className="object-cover rounded-lg w-full h-[40vh]" src={post.coverImage} alt={post.title} width={500} height={100} />
                 </div>
                 <div className="mb-3 flex items-center gap-2 text-sm text-muted-foreground">
                   <Calendar className="h-4 w-4" />
@@ -62,7 +62,7 @@ export default async function BlogList() {
                     <Link
                       key={tag.slug}
                       href={`/blog/tag/${tag.slug}`}
-                      className="mr-2 inline-flex items-center rounded-md px-1 py-0.5 text-xs text-white/50 hover:text-white"
+                      className="mr-2 inline-flex items-center rounded-md px-1 py-0.5 text-xs text-grey hover:text-white"
                     >
                       <Tag className="mr-1 h-3 w-3" />
                       {tag.name}
