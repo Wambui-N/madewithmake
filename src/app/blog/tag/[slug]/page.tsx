@@ -19,7 +19,7 @@ export default async function TagPage({ params }: { params: Promise<{ slug: stri
   const tag = (await getAllTags()).find((t) => t.slug === resolvedParams.slug);
 
   return (
-    <div className="mx-auto max-w-4xl py-12">
+    <div className="responsive">
       <h1 className="mb-4 text-2xl font-semibold overflow-hidden py-2">Posts tagged "{tag?.name}"</h1>
       <div className="space-y-8">
         {posts.map((post) => (
