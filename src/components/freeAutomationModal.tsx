@@ -50,28 +50,9 @@ const FreeAutomationModal: React.FC<FreeAutomationModalProps> = ({
     }
   };
 
-  const handleDownload = async () => {
-    try {
-      const { data, error: downloadError } = await supabase
-        .storage
-        .from('automations')
-        .download('email-automation.zip');
-
-      if (downloadError) throw downloadError;
-
-      // Create a download link for the file
-      const url = URL.createObjectURL(data);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'email-automation.zip';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    } catch (err) {
-      console.error("Error downloading file:", err);
-      setError("Failed to download file");
-    }
+  const handleDownload = () => {
+    const googleDriveLink = "https://drive.google.com/file/d/1nSMS4RYfoQz9p9P_nZvevJ0AGY2zt9FT/view?usp=drive_link"; // Replace with your actual link
+    window.open(googleDriveLink, "_blank");
   };
 
   const resetForm = () => {
