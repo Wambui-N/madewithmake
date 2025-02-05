@@ -2,7 +2,7 @@ import React from "react";
 
 export default function PrivacyPolicy() {
   return (
-    <div className="mx-auto p-6">
+    <div className="responsive">
       <h1 className="text-2xl font-bold">Privacy Policy</h1>
       <p className="text-grey">Last updated: January 25th, 2025</p>
 
@@ -109,8 +109,8 @@ export default function PrivacyPolicy() {
       <h2 className="mt-6 text-xl font-semibold">Contact Us</h2>
       <p className="mt-2">
         If you have any questions, contact us at{" "}
-        <a href="mailto:privacy@madewithmake.com" className="text-blue-600">
-          privacy@madewithmake.com
+        <a href="mailto:wambui@madewithmake.com" className="text-sky">
+          wambui@madewithmake.com
         </a>
         .
       </p>

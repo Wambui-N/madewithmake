@@ -13,7 +13,7 @@ const nextConfig = {
   },
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   images: {
-    domains: ['images.unsplash.com'], // Add domains for remote images
+    domains: ['images.unsplash.com', 'images.pexels.com'], // Add domains for remote images
   },
 }
 

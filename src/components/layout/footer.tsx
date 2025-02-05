@@ -101,12 +101,12 @@ const Footer = () => {
             <h4 className="mb-4 font-bold">Social Media</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-sm text-grey hover:text-white">
+                <a href="https://www.linkedin.com/company/made-with-make" className="text-sm text-grey hover:text-white">
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm text-grey hover:text-white">
+                <a href="https://x.com/madewithmake" className="text-sm text-grey hover:text-white">
                   X
                 </a>
               </li>
