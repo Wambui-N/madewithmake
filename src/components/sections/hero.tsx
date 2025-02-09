@@ -17,7 +17,7 @@ const Hero = () => {
         <h1 className="mb-6 overflow-hidden bg-gradient-to-r from-sky to-[#7DCFE6] bg-clip-text text-4xl font-bold text-transparent md:text-5xl lg:text-6xl">
           Unlock Hands-Free Growth with
           <br />
-          AI-Powered Workflows
+          AI-Powered Automations
         </h1>
         <p className="mx-auto mb-8 max-w-2xl text-base text-grey md:text-xl">
         We help you save time, get more leads, and make your business run smoothly with custom automation solutions. Everything will be ready in less than a week, and if you’re not happy, you get your money back—guaranteed.
