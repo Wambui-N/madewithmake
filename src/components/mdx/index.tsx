@@ -26,22 +26,37 @@ const CustomLink = (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
   );
 };
 
-const CustomImage = (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
-  if (!props.src) return null;
+const CustomImage = ({
+  src,
+  alt = "",
+  width = 720,
+  height = 480,
+  ...props
+}: React.ImgHTMLAttributes<HTMLImageElement>) => {
+  if (!src) return null;
+
+  // Ensure public folder paths are correctly prefixed
+  const imageSrc = src.startsWith("/") ? src : `/${src}`;
 
   return (
-    <div className="my-8 flex justify-center">
+    <span className="my-8 flex flex-col items-center">
       <Image
-        src={props.src}
-        alt={props.alt || ""}
-        width={720}
-        height={480}
-        layout="intrinsic"
-        className="max-w-full rounded-lg shadow-lg"
+        src={imageSrc}
+        alt={alt}
+        width={Number(width)}
+        height={Number(height)}
+        className="max-w-full h-auto rounded-lg shadow-lg"
       />
-    </div>
+      {props["data-caption"] && (
+        <figcaption className="mt-2 text-sm text-gray-400 text-center">
+          {props["data-caption"]}
+        </figcaption>
+      )}
+    </span>
   );
 };
+
+
 
 const AlertBox = ({
   children,
