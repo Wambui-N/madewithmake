@@ -14,13 +14,15 @@ const Hero = () => {
         transition={{ duration: 0.8 }}
         className="flex h-full flex-col items-center justify-center space-y-8"
       >
-        <h1 className="pb-2 overflow-hidden bg-gradient-to-r from-sky to-[#7DCFE6] bg-clip-text text-4xl font-bold text-transparent md:text-5xl lg:text-6xl">
-          Transform Your Enterprise with
+        <h1 className="overflow-hidden bg-gradient-to-r from-sky to-[#7DCFE6] bg-clip-text pb-2 text-4xl font-bold text-transparent md:text-5xl lg:text-6xl">
+          Streamline Your Operations
           <br />
-          Strategic AI Implementation
+          with Custom AI-Powered Automations
         </h1>
         <p className="mx-auto mb-8 max-w-2xl text-base text-grey md:text-xl">
-        We handle the daily tasks that slow you down - from finding new clients to managing your team's to-do list. Now you can focus on what matters: growing your company.
+          We help Kenyan businesses save 20+ hours a week by automating
+          repetitive tasks like lead generation, CRM management, and customer
+          support. Focus on growth while we handle the rest.
         </p>
         <div className="flex items-center justify-center space-x-4">
           <CTAButton />
