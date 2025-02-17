@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 // Custom components for MDX
 const CustomLink = (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
@@ -26,13 +27,21 @@ const CustomLink = (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
   );
 };
 
+interface MdxProps {
+  src: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+  "data-caption"?: string;
+}
+
 const CustomImage = ({
   src,
   alt = "",
   width = 720,
   height = 480,
   ...props
-}: React.ImgHTMLAttributes<HTMLImageElement>) => {
+}: MdxProps) => {
   if (!src) return null;
 
   // Ensure public folder paths are correctly prefixed
@@ -45,18 +54,16 @@ const CustomImage = ({
         alt={alt}
         width={Number(width)}
         height={Number(height)}
-        className="max-w-full h-auto rounded-lg shadow-lg"
+        className="h-auto max-w-full rounded-lg shadow-lg"
       />
       {props["data-caption"] && (
-        <figcaption className="mt-2 text-sm text-gray-400 text-center">
+        <figcaption className="mt-2 text-center text-sm text-gray-400">
           {props["data-caption"]}
         </figcaption>
       )}
     </span>
   );
 };
-
-
 
 const AlertBox = ({
   children,
@@ -95,9 +102,7 @@ const CodeBlock = ({
 // Typography Styling
 const CustomParagraph = (props: React.HTMLAttributes<HTMLParagraphElement>) => {
   return (
-    <p className="my-6 text-md leading-relaxed text-grey">
-      {props.children}
-    </p>
+    <p className="text-md my-6 leading-relaxed text-grey">{props.children}</p>
   );
 };
 
@@ -111,35 +116,27 @@ const CustomH1 = (props: React.HTMLAttributes<HTMLHeadingElement>) => {
 
 const CustomH2 = (props: React.HTMLAttributes<HTMLHeadingElement>) => {
   return (
-    <h2 className="my-6 text-3xl font-bold text-white">
-      {props.children}
-    </h2>
+    <h2 className="my-6 text-3xl font-bold text-white">{props.children}</h2>
   );
 };
 
 const CustomH3 = (props: React.HTMLAttributes<HTMLHeadingElement>) => {
   return (
-    <h3 className="my-4 text-2xl font-semibold text-white">
-      {props.children}
-    </h3>
+    <h3 className="my-4 text-2xl font-semibold text-white">{props.children}</h3>
   );
 };
 
 // Custom Lists
 const CustomUL = (props: React.HTMLAttributes<HTMLUListElement>) => {
   return (
-    <ul className="my-4 list-inside list-disc space-y-2 text-md text-grey">
+    <ul className="text-md my-4 list-inside list-disc space-y-2 text-grey">
       {props.children}
     </ul>
   );
 };
 
 const CustomOL = (props: React.HTMLAttributes<HTMLOListElement>) => {
-  return (
-    <ol className="my-2 list-inside text-grey">
-      {props.children}
-    </ol>
-  );
+  return <ol className="my-2 list-inside text-grey">{props.children}</ol>;
 };
 
 // Blockquote for Quotes or Highlights
